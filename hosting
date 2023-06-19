@@ -1,0 +1,23 @@
+June 19, 2023.  Tom Goddard
+
+Site was hosted with Neocom from 1999 until June 30, 2023.
+Then I migrated it to Hostinger.com using their virtual private server VPS 2 service.
+There were lots of choices of operating system for the server.  I chose Ubuntu 22.04
+with no control panel since that is what I am most familiar with.  It has a static
+IP address 5.183.8.229.  Apache2 was already installed.  I installed php and sqlite3
+and emacs as root and restarted the server
+
+   apt update
+   apt install php libapache2-mod-php sqlite3 php-sqlite3 emacs
+   service apache restart
+   
+The web site files are in
+
+   /var/www/html
+
+I didn't set up a virtual host in apache.
+
+After I switch the spratlingsilver.com DNS records to point to the new site I should
+also get an SSL certificate so https works.  Here are instructions for that
+
+   https://support.hostinger.com/en/articles/6865487-how-to-install-ssl-on-vps-using-certbot

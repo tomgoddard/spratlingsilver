@@ -25,7 +25,7 @@ $sql =<<<EOF
 EOF;      
    $item_result = $db->query($sql);
    $item = $item_result->fetchArray(SQLITE3_ASSOC);
-   $item_image = $item['Identity_Number'] . '.jpg';
+   $item_image = strtolower($item['Identity_Number']) . '.jpg';
    $item_type = $item['ItemType'];
    $catalog_number = $item['CatalogNo'];
    $item_dimensions = $item['Dimensions'];
@@ -94,7 +94,8 @@ while($row = $hallmark_result->fetchArray(SQLITE3_ASSOC) ) {
   $hallmark = $row['Hallmark'];
   $hallmark_clean = str_replace($special_chars, "", $hallmark);
   $hallmark_clean = str_replace(" ", "_", $hallmark_clean);
-  $hallmark_image = "Hallmark_" . $hallmark_clean . ".jpg";
+  $hallmark_clean = strtolower($hallmark_clean);  
+  $hallmark_image = "hallmark_" . $hallmark_clean . ".jpg";
   if ($level == "Primary") {
     $hallmark1_text = $hallmark;
     $hallmark1 = $hallmark_image;

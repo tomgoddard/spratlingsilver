@@ -251,9 +251,9 @@ EOF;
 <?php
    while($row = $dbresult->fetchArray(SQLITE3_ASSOC) ) {
       echo '<tr><td valign="top"><font size="2" face="arial">';
-      $item_id = ($row)['Item_ID'];
+      $item_id = $row['Item_ID'];
       $description = $row['Description'];
-      $imagefile = ($row)['Identity_Number'] . '_t.jpg';
+      $imagefile = strtolower($row['Identity_Number']) . '_t.jpg';
       $FileName = "photos/$imagefile";
       if (file_exists($FileName)) {
         echo "<a href=\"item_page.php?id=$item_id\"><img src=\"/photos/$imagefile\" alt=\"Thumbnail\" border=\"0\" onload=trapclick()></a>";

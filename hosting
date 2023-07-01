@@ -17,7 +17,20 @@ The web site files are in
 
 I didn't set up a virtual host in apache.
 
-After I switch the spratlingsilver.com DNS records to point to the new site I should
-also get an SSL certificate so https works.  Here are instructions for that
+---------------------------
+
+June 27, 2023.  Tom Goddard
+
+The spratlingsilver.com domain has been registered with Network Solutions since 1999.
+It was using custom DNS servers at spiderlink.com setup by Neocom.  Today I reverted
+the DNS to be handled by Network Solutions and changed the DNS A record to point to
+the migrated web site at Hostinger.com.
+
+---------------------------
+
+July 1, 2023.  Tom Goddard
+
+I got an SSL certificate from Let's Encrypt so https works.  I used the following
+instructions to use Python certbot to create and regularly update the certificate
 
    https://support.hostinger.com/en/articles/6865487-how-to-install-ssl-on-vps-using-certbot
